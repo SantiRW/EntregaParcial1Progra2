@@ -5,10 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import universidaddelquindio.example.parcial1progra2.Controllers.EstudianteController;
+import universidaddelquindio.example.parcial1progra2.Controllers.AcademiaController;
 import universidaddelquindio.example.parcial1progra2.Model.Academia;
-import universidaddelquindio.example.parcial1progra2.Controllers.DocenteController;
-import universidaddelquindio.example.parcial1progra2.Controllers.ProgramaController;
 
 import java.io.IOException;
 
@@ -28,7 +26,7 @@ public class HelloApplication extends Application {
 
         FXMLLoader loader = new FXMLLoader(
                 HelloApplication.class.getResource(
-                        "/universidaddelquindio/example/parcial1progra2/programa-view.fxml"
+                        "/universidaddelquindio/example/parcial1progra2/academia-view.fxml"
                 )
         );
 
@@ -38,12 +36,12 @@ public class HelloApplication extends Application {
                 800
         );
 
-        ProgramaController controller =
+        AcademiaController controller =
                 loader.getController();
 
         controller.setAcademia(academia);
 
-        stage.setTitle("LinguaPlus - Gestión de programas");
+        stage.setTitle("LinguaPlus - Sistema de gestion");
 
         stage.setScene(scene);
 
