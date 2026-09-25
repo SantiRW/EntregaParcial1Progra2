@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="universidaddelquindio.example.parcial1progra2.Controllers.DocenteController">
+
+    <!-- ENCABEZADO -->
+
+    <top>
+
+        <VBox spacing="5"
+              style="-fx-background-color: #1f4e79; -fx-padding: 20;">
+
+            <Label text="LINGUAPLUS"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 26px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Gestión de docentes"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 18px;"/>
+
+        </VBox>
+
+    </top>
+
+
+    <!-- CONTENIDO -->
+
+    <center>
+
+        <VBox spacing="20">
+
+            <padding>
+
+                <Insets top="25"
+                        right="25"
+                        bottom="25"
+                        left="25"/>
+
+            </padding>
+
+
+            <!-- TITULO DEL FORMULARIO -->
+
+            <Label text="Registrar docente"
+                   style="-fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+
+            <!-- FORMULARIO -->
+
+            <GridPane hgap="10"
+                      vgap="12">
+
+
+                <!-- IDENTIFICACION -->
+
+                <Label text="Identificación:"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtIdentificacion"
+                           promptText="Identificación"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- NOMBRE -->
+
+                <Label text="Nombre:"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtNombre"
+                           promptText="Nombre completo"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- IDIOMA -->
+
+                <Label text="Idioma / especialidad:"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtIdiomaEspecialidad"
+                           promptText="Ej: Inglés"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- TELEFONO -->
+
+                <Label text="Teléfono:"
+                       GridPane.rowIndex="3"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtTelefono"
+                           promptText="Teléfono"
+                           GridPane.rowIndex="3"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- TARIFA -->
+
+                <Label text="Tarifa por sesión:"
+                       GridPane.rowIndex="4"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtTarifaSecion"
+                           promptText="Ej: 50000"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+
+            <!-- BOTONES -->
+
+            <HBox spacing="10">
+
+                <Button text="Registrar docente"
+                        onAction="#registrarDocente"
+                        style="-fx-background-color: #2e75b6;
+                               -fx-text-fill: white;"/>
+
+                <Button text="Limpiar"
+                        onAction="#limpiarFormulario"/>
+
+            </HBox>
+
+
+            <!-- TITULO DE TABLA -->
+
+            <Label text="Docentes registrados"
+                   style="-fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+
+            <!-- TABLA -->
+
+            <TableView fx:id="tablaDocentes"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+
+                    <TableColumn fx:id="columnaIdentificacion"
+                                 text="Identificación"
+                                 prefWidth="120"/>
+
+
+                    <TableColumn fx:id="columnaNombre"
+                                 text="Nombre"
+                                 prefWidth="180"/>
+
+
+                    <TableColumn fx:id="columnaIdioma"
+                                 text="Idioma / especialidad"
+                                 prefWidth="180"/>
+
+
+                    <TableColumn fx:id="columnaTelefono"
+                                 text="Teléfono"
+                                 prefWidth="130"/>
+
+
+                    <TableColumn fx:id="columnaTarifa"
+                                 text="Tarifa por sesión"
+                                 prefWidth="140"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

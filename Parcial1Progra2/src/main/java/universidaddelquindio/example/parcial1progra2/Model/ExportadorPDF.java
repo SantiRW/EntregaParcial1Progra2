@@ -6,6 +6,4 @@ public class ExportadorPDF implements ExportadorComprobante {
     public void exportar(ComprobantePago comprobante) {
         System.out.println("Exportando PDF");
     }
-
-
 }

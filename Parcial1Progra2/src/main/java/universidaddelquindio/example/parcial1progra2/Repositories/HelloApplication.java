@@ -5,15 +5,52 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import universidaddelquindio.example.parcial1progra2.Controllers.EstudianteController;
+import universidaddelquindio.example.parcial1progra2.Model.Academia;
+import universidaddelquindio.example.parcial1progra2.Controllers.DocenteController;
+import universidaddelquindio.example.parcial1progra2.Controllers.ProgramaController;
+
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+
+        Academia academia = new Academia(
+                "LinguaPlus",
+                "900123456-7",
+                "Calle 10 # 5-20",
+                "6067491234",
+                "contacto@linguaplus.com",
+                "www.linguaplus.com"
+        );
+
+        FXMLLoader loader = new FXMLLoader(
+                HelloApplication.class.getResource(
+                        "/universidaddelquindio/example/parcial1progra2/programa-view.fxml"
+                )
+        );
+
+        Scene scene = new Scene(
+                loader.load(),
+                1200,
+                800
+        );
+
+        ProgramaController controller =
+                loader.getController();
+
+        controller.setAcademia(academia);
+
+        stage.setTitle("LinguaPlus - Gestión de programas");
+
         stage.setScene(scene);
+
         stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
     }
 }
