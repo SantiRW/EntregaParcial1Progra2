@@ -5,53 +5,31 @@ public class ServicioAdicional {
     private String nombre;
     private String descripcion;
     private double precio;
-    private boolean isdisponible;
+    private boolean disponible;
 
-    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean isdisponible) {
+    public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponible) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.isdisponible = true;
+        this.disponible = disponible; // antes se ignoraba y quedaba fijo en 'true'
     }
 
-    public String getCodigo() {
-        return codigo;
+    public boolean estaDisponible() {
+        return disponible;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
+    public String getCodigo() { return codigo; }
+    public void setCodigo(String codigo) { this.codigo = codigo; }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public boolean isIsdisponible() {
-        return isdisponible;
-    }
-
-    public void setIsdisponible(boolean isdisponible) {
-        this.isdisponible = isdisponible;
-    }
+    public void setDisponible(boolean disponible) { this.disponible = disponible; }
 }
