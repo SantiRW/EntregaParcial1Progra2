@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="universidaddelquindio.example.parcial1progra2.Controllers.ProgramaController">
+
+    <!-- ENCABEZADO -->
+
+    <top>
+
+        <VBox spacing="5"
+              style="-fx-background-color: #1f4e79; -fx-padding: 20;">
+
+            <Label text="LINGUAPLUS"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 26px;
+                          -fx-font-weight: bold;"/>
+
+            <Label text="Gestión de programas"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 18px;"/>
+
+        </VBox>
+
+    </top>
+
+
+    <!-- CONTENIDO -->
+
+    <center>
+
+        <VBox spacing="15">
+
+            <padding>
+
+                <Insets top="25"
+                        right="25"
+                        bottom="25"
+                        left="25"/>
+
+            </padding>
+
+
+            <Label text="Registrar programa"
+                   style="-fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+
+            <!-- FORMULARIO -->
+
+            <GridPane hgap="10"
+                      vgap="10">
+
+
+                <!-- CODIGO -->
+
+                <Label text="Código:"
+                       GridPane.rowIndex="0"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtCodigo"
+                           promptText="Código del programa"
+                           GridPane.rowIndex="0"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- NOMBRE -->
+
+                <Label text="Nombre:"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtNombre"
+                           promptText="Nombre del programa"
+                           GridPane.rowIndex="1"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- IDIOMA -->
+
+                <Label text="Idioma:"
+                       GridPane.rowIndex="2"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtIdioma"
+                           promptText="Ej: Inglés"
+                           GridPane.rowIndex="2"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- DESCRIPCION -->
+
+                <Label text="Descripción:"
+                       GridPane.rowIndex="3"
+                       GridPane.columnIndex="0"/>
+
+                <TextArea fx:id="txtDescripcion"
+                          promptText="Descripción del programa"
+                          prefRowCount="3"
+                          GridPane.rowIndex="3"
+                          GridPane.columnIndex="1"/>
+
+
+                <!-- DURACION -->
+
+                <Label text="Duración (meses):"
+                       GridPane.rowIndex="4"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtDuracionMeses"
+                           promptText="Ej: 6"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- VALOR MENSUAL -->
+
+                <Label text="Valor mensual:"
+                       GridPane.rowIndex="5"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtValorMensual"
+                           promptText="Ej: 250000"
+                           GridPane.rowIndex="5"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- TIPO -->
+
+                <Label text="Tipo de programa:"
+                       GridPane.rowIndex="6"
+                       GridPane.columnIndex="0"/>
+
+                <ComboBox fx:id="comboTipo"
+                          onAction="#cambiarTipoPrograma"
+                          prefWidth="250"
+                          GridPane.rowIndex="6"
+                          GridPane.columnIndex="1"/>
+
+
+                <!-- SESIONES -->
+
+                <Label text="Sesiones de tutor:"
+                       GridPane.rowIndex="7"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtSesionesTutor"
+                           promptText="Solo personalizado"
+                           GridPane.rowIndex="7"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- NIVEL -->
+
+                <Label text="Nivel requerido:"
+                       GridPane.rowIndex="8"
+                       GridPane.columnIndex="0"/>
+
+                <TextField fx:id="txtNivelRequerido"
+                           promptText="Solo personalizado"
+                           GridPane.rowIndex="8"
+                           GridPane.columnIndex="1"/>
+
+
+                <!-- OBJETIVOS -->
+
+                <Label text="Objetivos:"
+                       GridPane.rowIndex="9"
+                       GridPane.columnIndex="0"/>
+
+                <TextArea fx:id="txtObjetivos"
+                          promptText="Solo personalizado"
+                          prefRowCount="3"
+                          GridPane.rowIndex="9"
+                          GridPane.columnIndex="1"/>
+
+            </GridPane>
+
+
+            <!-- BOTONES -->
+
+            <HBox spacing="10">
+
+                <Button text="Registrar programa"
+                        onAction="#registrarPrograma"
+                        style="-fx-background-color: #2e75b6;
+                               -fx-text-fill: white;"/>
+
+                <Button text="Limpiar"
+                        onAction="#limpiarFormulario"/>
+
+            </HBox>
+
+
+            <!-- TABLA -->
+
+            <Label text="Programas registrados"
+                   style="-fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+
+            <TableView fx:id="tablaProgramas"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="columnaCodigo"
+                                 text="Código"
+                                 prefWidth="90"/>
+
+                    <TableColumn fx:id="columnaNombre"
+                                 text="Nombre"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="columnaIdioma"
+                                 text="Idioma"
+                                 prefWidth="100"/>
+
+                    <TableColumn fx:id="columnaDuracion"
+                                 text="Meses"
+                                 prefWidth="70"/>
+
+                    <TableColumn fx:id="columnaValorMensual"
+                                 text="Valor mensual"
+                                 prefWidth="110"/>
+
+                    <TableColumn fx:id="columnaTipo"
+                                 text="Tipo"
+                                 prefWidth="110"/>
+
+                    <TableColumn fx:id="columnaEstado"
+                                 text="Estado"
+                                 prefWidth="100"/>
+
+                    <TableColumn fx:id="columnaValorFinal"
+                                 text="Valor final"
+                                 prefWidth="110"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

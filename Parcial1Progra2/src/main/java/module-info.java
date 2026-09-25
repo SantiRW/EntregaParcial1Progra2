@@ -1,4 +1,5 @@
 module universidaddelquindio.example.parcial1progra2 {
+
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -11,10 +12,16 @@ module universidaddelquindio.example.parcial1progra2 {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens universidaddelquindio.example.parcial1progra2 to javafx.fxml;
-    exports universidaddelquindio.example.parcial1progra2;
+    // CONTROLADORES
     exports universidaddelquindio.example.parcial1progra2.Controllers;
-    opens universidaddelquindio.example.parcial1progra2.Controllers to javafx.fxml;
+    opens universidaddelquindio.example.parcial1progra2.Controllers
+            to javafx.fxml;
+
+    // REPOSITORIES / CLASES DE ARRANQUE
     exports universidaddelquindio.example.parcial1progra2.Repositories;
-    opens universidaddelquindio.example.parcial1progra2.Repositories to javafx.fxml;
+    opens universidaddelquindio.example.parcial1progra2.Repositories
+            to javafx.fxml;
+
+    // MODELO
+    exports universidaddelquindio.example.parcial1progra2.Model;
 }

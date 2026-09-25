@@ -8,7 +8,7 @@ public class ProgramaFactory {
     }
 
     private ProgramaFactory() {
-        // clase de utilidad, no se instancia
+
     }
 
     public static Programa crear(TipoPrograma tipo, String codigo, String nombre, String idioma,
