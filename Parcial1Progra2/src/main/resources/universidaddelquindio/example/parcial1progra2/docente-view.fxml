@@ -14,7 +14,9 @@
 <BorderPane
         xmlns="http://javafx.com/javafx/21"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="universidaddelquindio.example.parcial1progra2.Controllers.DocenteController">
+        fx:controller="universidaddelquindio.example.parcial1progra2.Controllers.DocenteController"
+        stylesheets="@styles.css"
+        >
 
     <!-- ENCABEZADO -->
 

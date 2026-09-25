@@ -1,9 +1,9 @@
-.HomeBar:hover {
+Button:hover {
     -fx-background-color: #15c;
 
 
 }
-.HomeBar {
+Button {
     -fx-background-color: #1f4e79;
     -fx-text-fill: #fff;
 }
