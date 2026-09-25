@@ -1,0 +1,9 @@
+.HomeBar:hover {
+    -fx-background-color: #15c;
+
+
+}
+.HomeBar {
+    -fx-background-color: #1f4e79;
+    -fx-text-fill: #fff;
+}
