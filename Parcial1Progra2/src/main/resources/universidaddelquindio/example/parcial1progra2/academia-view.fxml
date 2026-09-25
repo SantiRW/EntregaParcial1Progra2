@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="universidaddelquindio.example.parcial1progra2.Controllers.AcademiaController">
+
+    <!-- BARRA DE NAVEGACION -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12"
+              style="-fx-background-color: #0d2b45; -fx-padding: 14 24;">
+
+            <Label text="LINGUAPLUS"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+            <Label fx:id="lblNombreAcademia"
+                   style="-fx-text-fill: #a9c6e0;
+                          -fx-font-size: 13px;"/>
+
+            <!-- Region que empuja los botones hacia la derecha -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Programas" onAction="#mostrarProgramas"
+                    style="-fx-background-color: #1f4e79; -fx-text-fill: white;"/>
+
+            <Button text="Estudiantes" onAction="#mostrarEstudiantes"
+                    style="-fx-background-color: #1f4e79; -fx-text-fill: white;"/>
+
+            <Button text="Docentes" onAction="#mostrarDocentes"
+                    style="-fx-background-color: #1f4e79; -fx-text-fill: white;"/>
+
+            <Button text="Matriculas" onAction="#mostrarMatriculas"
+                    style="-fx-background-color: #1f4e79; -fx-text-fill: white;"/>
+
+        </HBox>
+    </top>
+
+    <!-- AQUI SE MUESTRA LA VISTA ACTIVA -->
+    <center>
+        <StackPane fx:id="panelCentral">
+            <padding>
+                <Insets bottom="0" left="0" right="0" top="0"/>
+            </padding>
+        </StackPane>
+    </center>
+
+</BorderPane>
