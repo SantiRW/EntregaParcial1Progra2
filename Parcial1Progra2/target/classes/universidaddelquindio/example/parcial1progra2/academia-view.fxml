@@ -26,13 +26,13 @@
                <!-- Region que empuja los botones hacia la derecha -->
                <Region HBox.hgrow="ALWAYS" />
    
-               <Button onAction="#mostrarProgramas"  styleClass="HomeBar" text="Programas" />
+               <Button onAction="#mostrarProgramas" styleClass="HomeBar" text="Programas" />
    
-               <Button onAction="#mostrarEstudiantes"  styleClass="HomeBar" text="Estudiantes" />
+               <Button onAction="#mostrarEstudiantes" styleClass="HomeBar" text="Estudiantes" />
 
-               <Button onAction="#mostrarDocentes"  styleClass="HomeBar" text="Docentes" />
+               <Button onAction="#mostrarDocentes" styleClass="HomeBar" text="Docentes" />
    
-               <Button onAction="#mostrarMatriculas"  styleClass="HomeBar" text="Matriculas" />
+               <Button onAction="#mostrarMatriculas" styleClass="HomeBar" text="Matriculas" />
            </children>
 
         </HBox>

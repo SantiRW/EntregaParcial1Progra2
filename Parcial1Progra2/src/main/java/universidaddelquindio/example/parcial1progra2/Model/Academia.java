@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Academia {
+
+
     private String nombreComercial;
     private String nit;
     private String direccion;
@@ -16,6 +18,8 @@ public class Academia {
     private List<ServicioAdicional> listaServicios;
     private List<Docente> listaDocentes;
     private List<Matricula> listaMatriculas;
+
+
 
     public Academia(String nombreComercial, String nit, String direccion, String telefono,
                     String correo, String paginaWeb) {

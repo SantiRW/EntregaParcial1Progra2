@@ -30,6 +30,7 @@ public class Matricula {
         }
         validarDescuento(descuento);
 
+
         this.numero = numero;
         this.estudiante = estudiante;
         this.programa = programa;
